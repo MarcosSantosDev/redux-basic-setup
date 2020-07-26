@@ -1,6 +1,6 @@
 # Redux basic setup
 
-In this project, a simple redux store was set up.
+In this project, a simple state control with redux was configured and, as an example of use, a login page was used.
 
 ## Getting Started
 
@@ -14,7 +14,6 @@ git clone https://github.com/MarcosSantosDev/redux-basic-setup.git
 
 You need to have installed on your machine:
 
-- [node](https://nodejs.org/en/)
 - [yarn](https://yarnpkg.com/)
 
 
@@ -27,12 +26,13 @@ yarn install
 ```
 yarn start
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 ## Author
 
 - Marcos Santos - Software Developer
 
   - [GitHub](https://github.com/MarcosSantosDev) / [Linkedin](https://www.linkedin.com/in/marcossantosdev/)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
