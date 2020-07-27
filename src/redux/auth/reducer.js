@@ -4,8 +4,6 @@ export const initialState = {
   auth: {
     data: null,
     loading: false,
-    success: null,
-    error: null,
   },
 };
 
@@ -25,7 +23,6 @@ export default (state = initialState, action) => {
           ...state.auth,
           data: action.payload,
           loading: false,
-          success: 'User logged',
         },
       };
 
@@ -33,9 +30,7 @@ export default (state = initialState, action) => {
       return {
         auth: {
           ...state.auth,
-          data: action.payload,
           loading: false,
-          error: 'User not authenticated',
         },
       };
 

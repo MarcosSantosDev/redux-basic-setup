@@ -24,17 +24,23 @@
       "last 1 safari version"
     ]
   },
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "eslint-config-airbnb": "^18.2.0",
     "json-server": "^0.16.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hook-form": "^6.1.0",
     "react-redux": "^7.2.1",
     "react-scripts": "^3.4.1",
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
-    "rxjs": "^6.6.0"
+    "rxjs": "^6.6.0",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.4",
