@@ -10,13 +10,6 @@ Clone the project:
 git clone https://github.com/MarcosSantosDev/redux-basic-setup.git
 ```
 
-### Prerequisites
-
-You need to have installed on your machine:
-
-- [yarn](https://yarnpkg.com/)
-
-
 ## Setup command's
 - Install dependences:
 ```
