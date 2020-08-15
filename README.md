@@ -7,6 +7,28 @@ In this project, a simple state control with redux was configured and, as an exa
 ![Screenshot](https://github.com/MarcosSantosDev/redux-basic-setup/blob/feat/form-validations/src/assets/images/preview.png?raw=true)
 
 
+## Technologies used
+
+- @reach/router
+
+- axios
+
+- eslint-config-airbnb
+
+- json-server
+
+- normalize.css
+
+- react-hook-form
+
+- redux
+
+- redux-observable
+
+- rxjs
+
+- styled-components
+
 ## Getting Started
 
 Clone the project:
