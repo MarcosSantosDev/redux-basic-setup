@@ -9,7 +9,13 @@ export default {
 
     return from(promise)
       .pipe(
-        map((response) => callbackSuccess(response.data)),
+        map((response) => {
+          if (response.data.length === 0) {
+            return callbackError('Invalid credentials');
+          }
+
+          return callbackSuccess(response.data);
+        }),
         catchError((error) => callbackError(error)),
       );
   },
