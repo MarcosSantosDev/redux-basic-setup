@@ -2,6 +2,11 @@
 
 In this project, a simple state control with redux was configured and, as an example of use, a login page was used.
 
+## Preview
+
+![Screenshot](https://github.com/MarcosSantosDev/redux-basic-setup/blob/feat/form-validations/src/assets/images/preview.png?raw=true)
+
+
 ## Getting Started
 
 Clone the project:

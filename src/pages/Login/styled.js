@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const gradient = keyframes`
   from {
@@ -9,14 +9,9 @@ const gradient = keyframes`
   }
 `;
 
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  width: 100vw;
-  height: 100vh;
+const animation = css`
   background-color: #3D9FE7;
-
+  
   && {
     background: linear-gradient(to right, #EAF2F8, #3D9FE7);
     background-size: 200%;
@@ -25,12 +20,21 @@ export const Container = styled.div`
   }
 `;
 
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100vw;
+  height: 100vh;
+`;
+
 export const ContentDescription = styled.div`
   grid-column: 1 / 2;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
+  ${animation}
 `;
 
 export const ContentTitle = styled.h1`
@@ -39,7 +43,7 @@ export const ContentTitle = styled.h1`
   text-transform: uppercase;
 `;
 
-export const Wrapper = styled.div`
+export const ContentForm = styled.div`
   grid-column: 2 / 3;
 
   display: flex;
@@ -51,7 +55,7 @@ export const Wrapper = styled.div`
   height: 100%;
 `;
 
-export const WrapperTitle = styled.h1`
+export const ContentFormTitle = styled.h1`
   color: #3D9FE7cc;
   text-transform: uppercase;
   text-align: center;
@@ -70,8 +74,6 @@ export const Label = styled.label`
   height: 20px;
   margin-top: 6px;
   font-size: 14px;
-
-  text-align: ${({ end }) => end && 'end'};
 `;
 
 export const Input = styled.input`
@@ -80,7 +82,7 @@ export const Input = styled.input`
   height: 40px;
   margin: 5px 0px;
   padding: 0 14px;
-  border: 1px solid #3D9FE7cc;
+  border: ${(props) => `1px solid ${props.error ? '#FF5843' : '#3D9FE7cc'}`};
   border-radius: 20px;
   outline: none;
 `;
@@ -97,4 +99,25 @@ export const Button = styled.button`
   color: #FFF;
   border-radius: 20px;
   outline: none;
+`;
+
+export const Content = styled.div`
+  max-width: 400px;
+  width: 100%;
+  height: 84px;
+`;
+
+export const AlertError = styled.p`
+  width: 100%;
+  font-size: 14px;
+  margin: 0px;
+  text-align: end;
+  color: #FF5843;
+`;
+
+export const Code = styled.div`
+  padding: 10px;
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
 `;
