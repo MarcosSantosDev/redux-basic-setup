@@ -8,26 +8,17 @@ In this project, a simple state control with redux was configured and, as an exa
 
 
 ## Technologies used
-
-- @reach/router
-
-- axios
-
-- eslint-config-airbnb
-
-- json-server
-
-- normalize.css
-
-- react-hook-form
-
-- redux
-
-- redux-observable
-
-- rxjs
-
-- styled-components
+  - @reach/router
+  - axios
+  - eslint-config-airbnb
+  - json-server
+  - normalize.css
+  - react-hook-form
+  - redux
+  - redux-observable
+  - rxjs
+  - styled-components
+  - yup
 
 ## Getting Started
 
