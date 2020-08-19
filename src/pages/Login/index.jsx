@@ -1,7 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useYupValidationResolver from '../../hooks/yupValidationResolver';
 
 import { useAuth } from '../../redux/auth';
+
+import { schemeLogin } from '../../utils/validateSchemes';
 
 import {
   Container,
@@ -22,10 +25,10 @@ export default function Login() {
   const { authentication, auth } = useAuth();
 
   const {
-    register,
     handleSubmit,
     errors,
-  } = useForm();
+    register,
+  } = useForm({ resolver: useYupValidationResolver(schemeLogin) });
 
   const onSubmit = (data) => {
     authentication(data);
@@ -47,12 +50,15 @@ export default function Login() {
             <Label>Email</Label>
             <Input
               name="email"
-              type="email"
+              type="text"
               placeholder="name@example.com"
               error={errors?.email}
-              ref={register({ required: true })}
+              ref={register}
             />
-            {errors?.email && <AlertError>{ errors?.email?.type === 'manual' ? errors.email.message : 'This field is required!'}</AlertError>}
+            {
+              errors?.email
+              && <AlertError>{errors?.email && errors.email.message}</AlertError>
+            }
           </Content>
           <Content>
             <Label>Password</Label>
@@ -61,9 +67,12 @@ export default function Login() {
               type="password"
               placeholder="*********"
               error={errors?.password}
-              ref={register({ required: true })}
+              ref={register}
             />
-            {errors?.password && <AlertError>{ errors?.email?.type === 'manual' ? errors.email.message : 'This field is required!'}</AlertError>}
+            {
+              errors?.password
+              && <AlertError>{errors?.password && errors.password.message}</AlertError>
+            }
           </Content>
           <Button type="submit">Sing in</Button>
         </Form>
