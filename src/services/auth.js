@@ -9,14 +9,17 @@ export default {
 
     return from(promise)
       .pipe(
-        map((response) => {
-          if (response.data.length === 0) {
-            return callbackError('Invalid credentials');
+        map(({status, data}) => {
+          if (status === 200) { 
+            if(data.length === 0) {
+              return callbackError('Invalid credentials');
+            }
+            return callbackSuccess(data);
           }
-
-          return callbackSuccess(response.data);
         }),
-        catchError((error) => callbackError(error)),
+        catchError((error) => {
+          return callbackError(error)
+        }),
       );
   },
 };

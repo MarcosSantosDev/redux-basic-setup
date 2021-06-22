@@ -16,7 +16,7 @@ const animation = css`
     background: linear-gradient(to right, #EAF2F8, #3D9FE7);
     background-size: 200%;
     background-clip: text;
-    animation: ${gradient} 20s ease infinite;
+    animation: ${gradient} 20s ease-in-out infinite;
   }
 `;
 
@@ -28,34 +28,40 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const ContentDescription = styled.div`
+export const SideBar = styled.div`
   grid-column: 1 / 2;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   ${animation}
+
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
-export const ContentTitle = styled.h1`
-  font-size: 60px;
+export const SideBarTitle = styled.h1`
   color: #3D9FE7cc;
+  font-size: 60px;
   text-transform: uppercase;
 `;
 
-export const ContentForm = styled.div`
+export const WrapperForm = styled.div`
   grid-column: 2 / 3;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
   background-color: #FFF;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  align-self: center;
+
+  @media only screen and (max-width: 1024px) {
+    grid-column: 1 / 3;
+  }
 `;
 
-export const ContentFormTitle = styled.h1`
+export const FormTitle = styled.h1`
   color: #3D9FE7cc;
   text-transform: uppercase;
   text-align: center;
@@ -77,7 +83,6 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  max-width: 400px;
   width: 100%;
   height: 40px;
   margin: 5px 0px;
@@ -87,32 +92,22 @@ export const Input = styled.input`
   outline: none;
 `;
 
-export const Button = styled.button`
-  cursor: pointer;
-  max-width: 400px;
+export const WrapperField = styled.div`
+  position: relative;
+  max-height: 84px;
   width: 100%;
-  height: 40px;
-  margin: 6px 0px;
-  padding: 0px;
-  border: 1px solid #3D9FE7cc;
-  background-color: #3D9FE7cc;
-  color: #FFF;
-  border-radius: 20px;
-  outline: none;
-`;
-
-export const Content = styled.div`
-  max-width: 400px;
-  width: 100%;
-  height: 84px;
+  padding: 0 10px;
 `;
 
 export const AlertError = styled.p`
+  opacity: ${({ showAlert }) => showAlert ? '1' : '0'};
   width: 100%;
+  min-height: 16px;
   font-size: 14px;
   margin: 0px;
-  text-align: end;
+  text-align: ${({ textAlignEnd }) => textAlignEnd ? 'end' : 'start'};
   color: #FF5843;
+  transition: opacity 600ms;
 `;
 
 export const Code = styled.div`
